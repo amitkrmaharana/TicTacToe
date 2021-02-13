@@ -8,8 +8,7 @@ public class TicTacToe {
 		}
 	}
 	public void playerSelection() {
-		char player;
-		char comp;
+		char player, comp;
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter x for chhosing cross and enter o for choosing circle");
 		char selection = input.next().charAt(0);
@@ -23,11 +22,18 @@ public class TicTacToe {
 		}
 		System.out.println("Player is " + player + " and Computer is " + comp);
 	}
+	public void showBoard() {
+		System.out.println("  |  |  ");
+		System.out.println("--------");
+		System.out.println("  |  |  ");
+		System.out.println("--------");
+		System.out.println("  |  |  ");
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to tictactoe game");
 		TicTacToe game = new TicTacToe();
 		game.gameBoard();
 		game.playerSelection();
-		
+		game.showBoard();
 	}
 }
