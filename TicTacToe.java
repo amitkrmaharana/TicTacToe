@@ -37,7 +37,7 @@ public class TicTacToe {
 		int user_input = input.nextInt();
 		if (user_input < 10 && user_input > 0) {
 			if (board[user_input] == ' ') {
-				System.out.println("Place is available");
+				board[user_input] = player;
 			}
 			else
 				System.out.println("Place is already taken");
@@ -52,5 +52,6 @@ public class TicTacToe {
 		char player = game.playerSelection();
 		game.showBoard(board);
 		game.userInput(board, player);
+		game.showBoard(board);
 	}
 }
