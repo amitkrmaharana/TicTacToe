@@ -53,88 +53,64 @@ public class TicTacToe {
 	}
 	// Computer decides to take a place in the design board
 	public char[] computerPlay(char[] board, char computer) {
-		boolean check = true;
-		while (check == true) {
-			int place = (int)Math.floor(Math.random() * 10) % 9 + 1;
 			// winning condition
-			if ((board[1] == board[2] && board[2] == computer && board[3] == ' ') || (board[6] == board[9] && board[9] == computer && board[3] == ' ') || (board[5] == board[7] && board[7] == computer && board[3] == ' ')) {
+			if ((board[1] == board[2] && board[2] == computer && board[3] == ' ') || (board[6] == board[9] && board[9] == computer && board[3] == ' ') || (board[5] == board[7] && board[7] == computer && board[3] == ' '))
 				board[3] = computer;
-				check = false;
-			}
-			else if ((board[1] == board[3] && board[3] == computer && board[2] == ' ') || (board[5] == board[8] && board[8] == computer && board[2] == ' ')) {
+			else if ((board[1] == board[3] && board[3] == computer && board[2] == ' ') || (board[5] == board[8] && board[8] == computer && board[2] == ' '))
 				board[2] = computer;
-				check = false;
-			}
-			else if ((board[2] == board[3] && board[2] == computer && board[1] == ' ') || (board[4] == board[7] && board[7] == computer && board[1] == ' ') || (board[5] == board[9] && board[9] == computer && board[1] == ' ')) {
+			else if ((board[2] == board[3] && board[2] == computer && board[1] == ' ') || (board[4] == board[7] && board[7] == computer && board[1] == ' ') || (board[5] == board[9] && board[9] == computer && board[1] == ' '))
 				board[1] = computer;
-				check = false;
-			}
-			else if ((board[4] == board[5] && board[5] == computer && board[6] == ' ') || (board[3] == board[9] && board[9] == computer && board[6] == ' ')) {
+			else if ((board[4] == board[5] && board[5] == computer && board[6] == ' ') || (board[3] == board[9] && board[9] == computer && board[6] == ' '))
 				board[6] = computer;
-				check = false;
-			}
-			else if ((board[5] == board[6] && board[6] == computer && board[4] == ' ') || (board[1] == board[7] && board[7] == computer && board[4] == ' ')) {
+			else if ((board[5] == board[6] && board[6] == computer && board[4] == ' ') || (board[1] == board[7] && board[7] == computer && board[4] == ' '))
 				board[4] = computer;
-				check = false;
-			}
-			else if ((board[4] == board[6] && board[6] == computer && board[5] == ' ') || (board[2] == board[8] && board[8] == computer && board[5] == ' ') || (board[1] == board[9] && board[9] == computer && board[5] == ' ') || (board[3] == board[7] && board[7] == computer && board[5] == ' ')) {
+			else if ((board[4] == board[6] && board[6] == computer && board[5] == ' ') || (board[2] == board[8] && board[8] == computer && board[5] == ' ') || (board[1] == board[9] && board[9] == computer && board[5] == ' ') || (board[3] == board[7] && board[7] == computer && board[5] == ' '))
 				board[5] = computer;
-				check = false;
-			}
-			else if ((board[7] == board[8] && board[8] == computer && board[9] == ' ') || (board[3] == board[6] && board[6] == computer && board[9] == ' ') || (board[1] == board[5] && board[5] == computer && board[9] == ' ')) {
+			else if ((board[7] == board[8] && board[8] == computer && board[9] == ' ') || (board[3] == board[6] && board[6] == computer && board[9] == ' ') || (board[1] == board[5] && board[5] == computer && board[9] == ' '))
 				board[9] = computer;
-				check = false;
-			}
-			else if ((board[7] == board[9] && board[9] == computer && board[8] == ' ') || (board[2] == board[5] && board[5] == computer && board[8] == ' ')) {
+			else if ((board[7] == board[9] && board[9] == computer && board[8] == ' ') || (board[2] == board[5] && board[5] == computer && board[8] == ' '))
 				board[8] = computer;
-				check = false;
-			}
-			else if ((board[8] == board[9] && board[9] == computer && board[7] == ' ') || (board[1] == board[4] && board[4] == computer && board[7] == ' ') || (board[3] == board[5] && board[5] == computer && board[7] == ' ')) {
+			else if ((board[8] == board[9] && board[9] == computer && board[7] == ' ') || (board[1] == board[4] && board[4] == computer && board[7] == ' ') || (board[3] == board[5] && board[5] == computer && board[7] == ' '))
 				board[7] = computer;
-				check = false;
-			}
 			// blocking condition
-			else if ((board[1] == board[2] && board[2] != ' ' && board[3] == ' ') || (board[6] == board[9] && board[9] != ' ' && board[3] == ' ') || (board[5] == board[7] && board[7] != ' ' && board[3] == ' ')) {
+			else if ((board[1] == board[2] && board[2] != ' ' && board[3] == ' ') || (board[6] == board[9] && board[9] != ' ' && board[3] == ' ') || (board[5] == board[7] && board[7] != ' ' && board[3] == ' '))
 				board[3] = computer;
-				check = false;
-			}
-			else if ((board[1] == board[3] && board[3] != ' ' && board[2] == ' ') || (board[5] == board[8] && board[8] != ' ' && board[2] == ' ')) {
+			else if ((board[1] == board[3] && board[3] != ' ' && board[2] == ' ') || (board[5] == board[8] && board[8] != ' ' && board[2] == ' '))
 				board[2] = computer;
-				check = false;
-			}
-			else if ((board[2] == board[3] && board[2] != ' ' && board[1] == ' ') || (board[4] == board[7] && board[7] != ' ' && board[1] == ' ') || (board[5] == board[9] && board[9] != ' ' && board[1] == ' ')) {
+			else if ((board[2] == board[3] && board[2] != ' ' && board[1] == ' ') || (board[4] == board[7] && board[7] != ' ' && board[1] == ' ') || (board[5] == board[9] && board[9] != ' ' && board[1] == ' '))
 				board[1] = computer;
-				check = false;
-			}
-			else if ((board[4] == board[5] && board[5] != ' ' && board[6] == ' ') || (board[3] == board[9] && board[9] != ' ' && board[6] == ' ')) {
+			else if ((board[4] == board[5] && board[5] != ' ' && board[6] == ' ') || (board[3] == board[9] && board[9] != ' ' && board[6] == ' '))
 				board[6] = computer;
-				check = false;
-			}
-			else if ((board[5] == board[6] && board[6] != ' ' && board[4] == ' ') || (board[1] == board[7] && board[7] != ' ' && board[4] == ' ')) {
+			else if ((board[5] == board[6] && board[6] != ' ' && board[4] == ' ') || (board[1] == board[7] && board[7] != ' ' && board[4] == ' '))
 				board[4] = computer;
-				check = false;
-			}
-			else if ((board[4] == board[6] && board[6] != ' ' && board[5] == ' ') || (board[2] == board[8] && board[8] != ' ' && board[5] == ' ') || (board[1] == board[9] && board[9] != ' ' && board[5] == ' ') || (board[3] == board[7] && board[7] != ' ' && board[5] == ' ')) {
+			else if ((board[4] == board[6] && board[6] != ' ' && board[5] == ' ') || (board[2] == board[8] && board[8] != ' ' && board[5] == ' ') || (board[1] == board[9] && board[9] != ' ' && board[5] == ' ') || (board[3] == board[7] && board[7] != ' ' && board[5] == ' '))
 				board[5] = computer;
-				check = false;
-			}
-			else if ((board[7] == board[8] && board[8] != ' ' && board[9] == ' ') || (board[3] == board[6] && board[6] != ' ' && board[9] == ' ') || (board[1] == board[5] && board[5] != ' ' && board[9] == ' ')) {
+			else if ((board[7] == board[8] && board[8] != ' ' && board[9] == ' ') || (board[3] == board[6] && board[6] != ' ' && board[9] == ' ') || (board[1] == board[5] && board[5] != ' ' && board[9] == ' '))
 				board[9] = computer;
-				check = false;
-			}
-			else if ((board[7] == board[9] && board[9] != ' ' && board[8] == ' ') || (board[2] == board[5] && board[5] != ' ' && board[8] == ' ')) {
+			else if ((board[7] == board[9] && board[9] != ' ' && board[8] == ' ') || (board[2] == board[5] && board[5] != ' ' && board[8] == ' '))
 				board[8] = computer;
-				check = false;
-			}
-			else if ((board[8] == board[9] && board[9] != ' ' && board[7] == ' ') || (board[1] == board[4] && board[4] != ' ' && board[7] == ' ') || (board[3] == board[5] && board[5] != ' ' && board[7] == ' ')) {
+			else if ((board[8] == board[9] && board[9] != ' ' && board[7] == ' ') || (board[1] == board[4] && board[4] != ' ' && board[7] == ' ') || (board[3] == board[5] && board[5] != ' ' && board[7] == ' '))
 				board[7] = computer;
-				check = false;
+			// Taking corner places
+			else if (board[1] == ' ')
+				board[1] = computer;
+			else if (board[3] == ' ')
+				board[3] = computer; 
+			else if (board[7] == ' ')
+				board[7] = computer;
+			else if (board[9] == ' ')
+				board[9] = computer;
+			else {// if there is a space left then the place would be taken by computer
+				boolean check = true;
+				while (check == true) {
+					int place = (int)Math.floor(Math.random() * 10) % 9 + 1;
+					if(board[place] == ' ') {
+						board[place] = computer;
+						check = false;
+					}
+				}
 			}
-			else if (board[place] == ' ') {// if there is a space left then the place would be taken by computer
-				board[place] = computer;
-				check = false;
-			}
-		}
+
 		return board;
 	}
 	//determines A Win , A tie or change of turn
