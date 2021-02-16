@@ -125,43 +125,46 @@ public class TicTacToe {
 		int chance = game.firstChance();
 		boolean check = true;
 		while(check == true) {
-			if (chance == 1) {
-				board = game.userInput(board, player);
-				result = game.winTie(board);
-				if (result == 0) {
-					System.out.println("The game is a Tie");
-					check = false;
-				}
-				else if (result == 1) {
-					System.out.println("Player is the winner");
-					check = false;
-				}
-				else {
-					System.out.println("Computer's chance to play");
-					game.showBoard(board);
-					chance = 0;
-				}
-			}
-			else {
-				board = game.computerPlay(board, computer);
-				result = game.winTie(board);
-				if (result == 0) {
-					System.out.println("The game is a Tie");
-					check = false;
-				}
-				else if (result == 1) {
-					System.out.println("Computer is the winner");
-					check = false;
-				}
-				else {
-					System.out.println("Player's chance to play");
-					game.showBoard(board);
-					chance = 1;
-				}
+			switch(chance) {
+				case 1:
+					board = game.userInput(board, player);
+					result = game.winTie(board);
+					if (result == 0) {
+						System.out.println("The game is a Tie");
+						check = false;
+					}
+					else if (result == 1) {
+						System.out.println("Player is the winner");
+						check = false;
+					}
+					else {
+						System.out.println("Computer's chance to play");
+						game.showBoard(board);
+						chance = 0;
+						check = true;
+					}
+					break;
+				case 0:
+					board = game.computerPlay(board, computer);
+					result = game.winTie(board);
+					if (result == 0) {
+						System.out.println("The game is a Tie");
+						check = false;
+					}
+					else if (result == 1) {
+						System.out.println("Computer is the winner");
+						check = false;
+					}
+					else {
+						System.out.println("Player's chance to play");
+						game.showBoard(board);
+						chance = 1;
+						check = true;
+					}
+					break;
 			}
 			
 		}
 		game.showBoard(board);
-		
 	}
 }
