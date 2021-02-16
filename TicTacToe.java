@@ -56,7 +56,43 @@ public class TicTacToe {
 		boolean check = true;
 		while (check == true) {
 			int place = (int)Math.floor(Math.random() * 10) % 9 + 1;
-			if (board[place] == ' ') {// if there is a space left then the place would be taken by computer
+			if ((board[1] == board[2] && board[2] != ' ' && board[3] == ' ') || (board[6] == board[9] && board[9] != ' ' && board[3] == ' ') || (board[5] == board[7] && board[7] != ' ' && board[3] == ' ')) {
+				board[3] = computer;
+				check = false;
+			}
+			else if ((board[1] == board[3] && board[3] != ' ' && board[2] == ' ') || (board[5] == board[8] && board[8] != ' ' && board[2] == ' ')) {
+				board[2] = computer;
+				check = false;
+			}
+			else if ((board[2] == board[3] && board[2] != ' ' && board[1] == ' ') || (board[4] == board[7] && board[7] != ' ' && board[1] == ' ') || (board[5] == board[9] && board[9] != ' ' && board[1] == ' ')) {
+				board[1] = computer;
+				check = false;
+			}
+			else if ((board[4] == board[5] && board[5] != ' ' && board[6] == ' ') || (board[3] == board[9] && board[9] != ' ' && board[6] == ' ')) {
+				board[6] = computer;
+				check = false;
+			}
+			else if ((board[5] == board[6] && board[6] != ' ' && board[4] == ' ') || (board[1] == board[7] && board[7] != ' ' && board[4] == ' ')) {
+				board[4] = computer;
+				check = false;
+			}
+			else if ((board[4] == board[6] && board[6] != ' ' && board[5] == ' ') || (board[2] == board[8] && board[8] != ' ' && board[5] == ' ') || (board[1] == board[9] && board[9] != ' ' && board[5] == ' ') || (board[3] == board[7] && board[7] != ' ' && board[5] == ' ')) {
+				board[5] = computer;
+				check = false;
+			}
+			else if ((board[7] == board[8] && board[8] != ' ' && board[9] == ' ') || (board[3] == board[6] && board[6] != ' ' && board[9] == ' ') || (board[1] == board[5] && board[5] != ' ' && board[9] == ' ')) {
+				board[9] = computer;
+				check = false;
+			}
+			else if ((board[7] == board[9] && board[9] != ' ' && board[8] == ' ') || (board[2] == board[5] && board[5] != ' ' && board[8] == ' ')) {
+				board[8] = computer;
+				check = false;
+			}
+			else if ((board[8] == board[9] && board[9] != ' ' && board[7] == ' ') || (board[1] == board[4] && board[4] != ' ' && board[7] == ' ') || (board[3] == board[5] && board[5] != ' ' && board[7] == ' ')) {
+				board[7] = computer;
+				check = false;
+			}
+			else if (board[place] == ' ') {// if there is a space left then the place would be taken by computer
 				board[place] = computer;
 				check = false;
 			}
