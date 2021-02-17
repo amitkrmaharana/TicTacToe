@@ -1,4 +1,3 @@
-package javapractice;
 import java.util.Scanner;
 public class TicTacToe {
 	// Initialized a  game board array
@@ -89,6 +88,22 @@ public class TicTacToe {
 			else if ((board[8] == board[9] && board[9] != ' ' && board[7] == ' ') || (board[1] == board[4] && board[4] != ' ' && board[7] == ' ') || (board[3] == board[5] && board[5] != ' ' && board[7] == ' '))
 				board[7] = computer;
 			// Taking corner places
+			else if (board[1] == ' ' && board[3] == ' ' && board[7] == ' ' && board[9] == ' ') {// for 1st chance of the computer so repeatablity of moves does not occur 
+				int random = (int)Math.floor(Math.random() * 10) % 4;
+				switch(random) { // random values 0, 1, 2, 3 denotes board places 1, 3, 7, 9 respectively
+					case 0:
+						board[1] = computer;
+						break;
+					case 1:
+						board[3] = computer;
+						break;
+					case 2:
+						board[7] = computer;
+						break;
+					default:
+						board[9] = computer;
+				}
+			}
 			else if (board[1] == ' ')
 				board[1] = computer;
 			else if (board[3] == ' ')
@@ -204,8 +219,8 @@ public class TicTacToe {
 		}
 	}
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		playAgain(input);
+		Scanner sc = new Scanner(System.in);
+		playAgain(sc);
 		System.out.println("******THANK YOU! VISIT AGAIN******");
 	}
 }
